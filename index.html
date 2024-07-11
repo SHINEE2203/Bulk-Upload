@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        form {
+            border: 1px solid black;
+            padding: 2%;
+            margin-bottom: 20px;
+        }
+        #downloadSample {
+            text-decoration: none;
+            color: black;
+        }
+        .invalid-row {
+            color: red;
+        }
+        .hidden {
+            display: none;
+        }
+            .custom-file-upload {
+                border: 1px solid #ccc;
+                display: inline-block;
+                
+                cursor: pointer;
+            }
+            input{
+                padding: 1%;
+            }
+
+    </style>
+</head>
+<body>
+    <h2>Upload CSV File</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="fileUpload">Enter the file:</label>
+        <input type="file" name="fileUpload" class="custom-file-upload" required> <br><br>
+        <button type="submit">Upload</button>
+        <button type="button">
+            <a id="downloadSample" href="Book1.csv" download>Download Sample Data</a>
+        </button>
+    </form>
+    <div id="response"></div>
+    <h3 class="hidden">Records</h3>
+    <table id="recordsTable" class="hidden">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>STATE - DB</th>
+                <th>CITY - DB</th>
+                <th>POP Name</th>
+                <th>POP ID</th>
+                <th>POP Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Pincode</th>
+                <th>Validation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be inserted here by jQuery -->
+        </tbody>
+    </table>
+</body>
+</html>
